@@ -47,6 +47,10 @@ reviewBtn.addEventListener(`click`,(e)=>{
 
 
 // i will need localStorage to get my cart details across the html pages
+// cart design too big for mobile phone
+// add checkout page
+// form validation is needed
+
 
 
 
