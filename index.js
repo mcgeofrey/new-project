@@ -15,6 +15,13 @@ closeSlidebar.addEventListener('click',()=>{
     
 });
 
+const closeBar = () =>{
+    const sideBar = document.querySelector(`.sidebar`);
+    sideBar.style.transition = `0.4s`;
+    sideBar.style.display = `none`; 
+};
+
+
 const reviewBtn = document.getElementById(`reviewBtn`);
 
 reviewBtn.addEventListener(`click`,(e)=>{
