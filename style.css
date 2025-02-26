@@ -988,7 +988,7 @@ footer{
       }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .cartDetails {
         display: flex;
         flex-direction: column;
@@ -1015,7 +1015,7 @@ footer{
         font-size: 12px;
         padding: 6px;
     }
-}
+} */
 
 
 
