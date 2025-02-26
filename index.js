@@ -52,7 +52,7 @@ reviewBtn.addEventListener(`click`,(e)=>{
         return;
     }else if (!emailPattern.test(email.trim())) {
         alert('Please enter a valid email address.')}
-        else if(namePattern.test(name)){
+        else if(!namePattern.test(name)){
             alert('your name cannot be a number');
         }
 
