@@ -988,5 +988,34 @@ footer{
       }
 }
 
+@media (max-width: 768px) {
+    .cartDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .cartDetails img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cartDetails p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .cartDetails input {
+        width: 60px;
+        margin: 5px 0;
+    }
+
+    .cartDetails button {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
 
 

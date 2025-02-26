@@ -3,6 +3,10 @@ const closeSlidebar = document.querySelector(`.closeSideBar`);
 const cartjs = document.querySelector(`.shoppingCart`);
 const cancelCart = document.querySelector(`.fa-xmark`);
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart(); // Update the cart display on page load
+});
+
 showSidebar.addEventListener('click',()=>{
     const sideBar = document.querySelector(`.sidebar`);
     sideBar.style.display = `flex`;
@@ -26,17 +30,28 @@ const reviewBtn = document.getElementById(`reviewBtn`);
 
 reviewBtn.addEventListener(`click`,(e)=>{
     e.preventDefault();
+
+    
+
+
     let parms = {
         name: document.getElementById(`name`).value,
         email: document.getElementById(`email`).value,
         message: document.getElementById(`message`).value,
     }
 
+    const name = document.getElementById(`name`).value;
+    const email = document.getElementById(`email`).value;
+    const message = document.getElementById(`message`).value;
+
+    if (!name || !email || !message) {
+        alert("Please fill out all fields before submitting.");
+        return;
+    }
+
     emailjs.send(`service_mg5z9j9`,`template_61gk54o`,parms).then(alert(`Email has been sent!`));
 
-    const name = document.getElementById(`name`);
-    const email = document.getElementById(`email`);
-    const message = document.getElementById(`message`);
+    
 
     name.value= ``;
     email.value = '';
@@ -63,7 +78,8 @@ reviewBtn.addEventListener(`click`,(e)=>{
 
 const cartBtn = document.querySelectorAll(`#add-to-cart`);
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
 
 cartBtn.forEach(button =>{
     button.addEventListener(`click`, e =>{
@@ -102,8 +118,8 @@ cartBtn.forEach(button =>{
             cart.push(cartItem);
     
             console.log(cart);
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
-        updateCart();
 
     })
 });
