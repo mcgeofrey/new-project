@@ -822,7 +822,7 @@ footer{
 
 
 
-@media only screen and (max-width:420px) and (min-width:250px){
+@media only screen and (max-width:437px) and (min-width:250px){
     .sidebar{
         width: 100%;
     }
