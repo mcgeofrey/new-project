@@ -44,10 +44,17 @@ reviewBtn.addEventListener(`click`,(e)=>{
     const email = document.getElementById(`email`).value;
     const message = document.getElementById(`message`).value;
 
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const namePattern = /^[a-zA-Z\s-]+$/;
+
     if (!name || !email || !message) {
         alert("Please fill out all fields before submitting.");
         return;
-    }
+    }else if (!emailPattern.test(email.trim())) {
+        alert('Please enter a valid email address.')}
+        else if(namePattern.test(name)){
+            alert('your name cannot be a number');
+        }
 
     emailjs.send(`service_mg5z9j9`,`template_61gk54o`,parms).then(alert(`Email has been sent!`));
 
