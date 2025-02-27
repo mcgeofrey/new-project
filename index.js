@@ -10,19 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 showSidebar.addEventListener('click',()=>{
     const sideBar = document.querySelector(`.sidebar`);
     sideBar.style.display = `flex`;
+    setTimeout(() => sideBar.style.opacity = '1', 50);
 });
 
 closeSlidebar.addEventListener('click',()=>{
     const sideBar = document.querySelector(`.sidebar`);
-    sideBar.style.transition = `0.4s`;
-    sideBar.style.display = `none`; 
+    sideBar.style.opacity = '0';
+    setTimeout(() => sideBar.style.display = `none`, 400);
     
 });
 
 const closeBar = () =>{
     const sideBar = document.querySelector(`.sidebar`);
-    sideBar.style.transition = `0.4s`;
-    sideBar.style.display = `none`; 
+    sideBar.style.opacity = '0';
+    setTimeout(() => sideBar.style.display = `none`, 400);
 };
 
 
@@ -241,6 +242,7 @@ cartjs.addEventListener(`click`,()=>{
 
 function removeFromCart(productName) {
     cart = cart.filter(item => item.name !== productName);
+    localStorage.setItem("cart", JSON.stringify(cart)); 
     updateCart();
 }
 

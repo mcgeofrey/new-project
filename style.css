@@ -76,18 +76,19 @@ nav a:hover{
     position: relative;
 }
 
-.shoppingCart span{
+#cartCount{
+    display: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     font-size: 15px;
     color: #A5F3D5;
+    background-color: red;
     position: absolute;
     text-align: center;
     top: 20px;
     right: 21px;
-    display: none;
-}
+    }
 
 .shoppingCart img:hover{
     padding: 10px;
