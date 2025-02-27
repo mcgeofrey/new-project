@@ -26,6 +26,9 @@ const closeBar = () =>{
 };
 
 
+      
+
+
 const reviewBtn = document.getElementById(`reviewBtn`);
 
 reviewBtn.addEventListener(`click`,(e)=>{
@@ -91,6 +94,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 cartBtn.forEach(button =>{
     button.addEventListener(`click`, e =>{
 
+
         
         let products = e.target.closest(`.product-item`);
 
@@ -98,6 +102,8 @@ cartBtn.forEach(button =>{
         let productPrice = parseFloat(products.querySelector(`#price`).textContent);
         let productImage = products.querySelector(`img`).src;
         let productQuantity = parseInt(products.querySelector(`input`).value);
+
+        
 
         console.log(productImage);
 
@@ -125,6 +131,7 @@ cartBtn.forEach(button =>{
             cart.push(cartItem);
     
             console.log(cart);
+            
             localStorage.setItem('cart', JSON.stringify(cart));
         }
 
@@ -134,9 +141,14 @@ cartBtn.forEach(button =>{
 function updateCart(){
 
     const cartDetails = document.getElementById(`details`);
+    const cartCount = document.getElementById(`cartCount`);
     let totalPrice = 0;
+    let totalItems = 0;
     cartDetails.innerHTML = "";
     cart.forEach(item =>{
+
+        
+
 
       const divForCart = document.createElement(`div`);
       const img = document.createElement(`img`);
@@ -190,12 +202,20 @@ function updateCart(){
       console.log(cart);
 
       totalPrice += item.price * item.quantity;
+      totalItems += item.quantity; // Sum up all quantities
+      
 
     });
       // Display Total Price
+      
       const message = document.createElement(`p`);
       message.textContent = `Total Price = ₦${totalPrice.toFixed(2)}`;
       cartDetails.appendChild(message);
+      cartCount.textContent = totalItems;
+      cartCount.style.display = `block`;
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      
     
 
 }

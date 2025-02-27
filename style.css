@@ -73,6 +73,20 @@ nav a:hover{
 .shoppingCart{
     margin-left: 10px;
     margin-right: 20px;
+    position: relative;
+}
+
+.shoppingCart span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #e3f11a;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 21px;
+    display: none;
 }
 
 .shoppingCart img:hover{
