@@ -118,7 +118,7 @@ cartBtn.forEach(button =>{
         
         if(existingProduct){
             existingProduct.quantity += productQuantity;
-            updateCart();
+
         }else{
 
             let cartItem ={
@@ -127,14 +127,16 @@ cartBtn.forEach(button =>{
                 image:productImage,
                 quantity:productQuantity
             };
-            updateCart();
+            
     
             cart.push(cartItem);
     
             console.log(cart);
             
-            localStorage.setItem('cart', JSON.stringify(cart));
+            
         }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
 
     })
 });
