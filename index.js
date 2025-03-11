@@ -60,7 +60,7 @@ reviewBtn.addEventListener(`click`,(e)=>{
             alert('your name cannot be a number');
         }
 
-    emailjs.send(`service_mg5z9j9`,`template_61gk54o`,parms).then(alert(`Email has been sent!`));
+    emailjs.send(`service_mg5z9j9`,`template_rhcxky9`,parms).then(alert(`Email has been sent!`));
 
     
 
